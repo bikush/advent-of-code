@@ -34,7 +34,8 @@ fn day_2() {
     let mut contents = String::new();
     file.read_to_string(&mut contents).unwrap();
     let part_1 = day_2::part_1(&contents);
-    println!("Day 2: {}, {}", part_1, 0);  
+    let part_2 = day_2::part_2(&contents);
+    println!("Day 2: {}, {}", part_1, part_2);  
 }
 
 fn main() {
