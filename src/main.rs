@@ -1,6 +1,7 @@
 use std::fs::File;
 use std::io::prelude::*;
 
+
 fn read(path: &str) -> std::io::Result<Vec<u32>> {
     let mut file = File::open(path)?;
     let mut contents = String::new();
@@ -21,7 +22,7 @@ fn main() {
 
     // Day1
     let numbers = read("data/day1.txt").unwrap();
-    let day1_1 = advent_of_code::day_1_part_1(&numbers);
-    let day1_2 = advent_of_code::day_1_part_2(&numbers);
+    let day1_1 = advent_of_code::day_1::part_1(&numbers);
+    let day1_2 = advent_of_code::day_1::part_2(&numbers);
     println!("Day 1: {}, {}", day1_1, day1_2);
 }
