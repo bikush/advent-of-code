@@ -1,6 +1,10 @@
 use std::fs::File;
 use std::io::prelude::*;
 
+mod solutions;
+pub use crate::solutions::day_1;
+pub use crate::solutions::day_2;
+
 fn read(path: &str) -> std::io::Result<Vec<u32>> {
 	let mut file = File::open(path)?;
 	let mut contents = String::new();
@@ -19,8 +23,8 @@ fn read(path: &str) -> std::io::Result<Vec<u32>> {
 fn day_1() {
 	// Day1
 	let numbers = read("data/day1.txt").unwrap();
-	let part_1 = advent_of_code::day_1::part_1(&numbers);
-	let part_2 = advent_of_code::day_1::part_2(&numbers);
+	let part_1 = day_1::part_1(&numbers);
+	let part_2 = day_1::part_2(&numbers);
 	println!("Day 1: {}, {}", part_1, part_2);  
 }
 
@@ -29,7 +33,7 @@ fn day_2() {
     let mut file = File::open("data/day2.txt").unwrap();
     let mut contents = String::new();
     file.read_to_string(&mut contents).unwrap();
-    let part_1 = advent_of_code::day_2::part_1(&contents);
+    let part_1 = day_2::part_1(&contents);
     println!("Day 2: {}, {}", part_1, 0);  
 }
 
