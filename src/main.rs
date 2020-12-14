@@ -4,6 +4,7 @@ use std::io::prelude::*;
 mod solutions;
 pub use crate::solutions::day_1;
 pub use crate::solutions::day_2;
+pub use crate::solutions::day_3;
 
 fn read(path: &str) -> std::io::Result<Vec<u32>> {
 	let mut file = File::open(path)?;
@@ -38,9 +39,21 @@ fn day_2() {
     println!("Day 2: {}, {}", part_1, part_2);  
 }
 
+fn day_3() {
+    // Day1
+    let mut file = File::open("data/day3.txt").unwrap();
+    let mut contents = String::new();
+    file.read_to_string(&mut contents).unwrap();
+    let part_1 = day_3::part_1(&contents);
+    let part_2 = day_3::part_2(&contents);
+    println!("Day 3: {}, {}", part_1, part_2);  
+}
+
+
 fn main() {
 	println!("AOC!");
 
     day_1();
     day_2();
+    day_3();
 }
